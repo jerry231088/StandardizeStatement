@@ -1,0 +1,17 @@
+C:\Users\DELL\source\repos\StandardCCBill\StandardCCBill\bin\Debug\netcoreapp3.1\StandardCCBill.exe
+C:\Users\DELL\source\repos\StandardCCBill\StandardCCBill\bin\Debug\netcoreapp3.1\StandardCCBill.deps.json
+C:\Users\DELL\source\repos\StandardCCBill\StandardCCBill\bin\Debug\netcoreapp3.1\StandardCCBill.runtimeconfig.json
+C:\Users\DELL\source\repos\StandardCCBill\StandardCCBill\bin\Debug\netcoreapp3.1\StandardCCBill.runtimeconfig.dev.json
+C:\Users\DELL\source\repos\StandardCCBill\StandardCCBill\bin\Debug\netcoreapp3.1\StandardCCBill.dll
+C:\Users\DELL\source\repos\StandardCCBill\StandardCCBill\bin\Debug\netcoreapp3.1\StandardCCBill.pdb
+C:\Users\DELL\source\repos\StandardCCBill\StandardCCBill\obj\Debug\netcoreapp3.1\StandardCCBill.csprojAssemblyReference.cache
+C:\Users\DELL\source\repos\StandardCCBill\StandardCCBill\obj\Debug\netcoreapp3.1\StandardCCBill.AssemblyInfoInputs.cache
+C:\Users\DELL\source\repos\StandardCCBill\StandardCCBill\obj\Debug\netcoreapp3.1\StandardCCBill.AssemblyInfo.cs
+C:\Users\DELL\source\repos\StandardCCBill\StandardCCBill\obj\Debug\netcoreapp3.1\StandardCCBill.csproj.CoreCompileInputs.cache
+C:\Users\DELL\source\repos\StandardCCBill\StandardCCBill\obj\Debug\netcoreapp3.1\StandardCCBill.dll
+C:\Users\DELL\source\repos\StandardCCBill\StandardCCBill\obj\Debug\netcoreapp3.1\StandardCCBill.pdb
+C:\Users\DELL\source\repos\StandardCCBill\StandardCCBill\obj\Debug\netcoreapp3.1\StandardCCBill.genruntimeconfig.cache
+C:\Users\DELL\source\repos\StandardCCBill\StandardCCBill\bin\Debug\netcoreapp3.1\InputBills\Axis-Input-Case3.csv
+C:\Users\DELL\source\repos\StandardCCBill\StandardCCBill\bin\Debug\netcoreapp3.1\InputBills\HDFC-Input-Case1.csv
+C:\Users\DELL\source\repos\StandardCCBill\StandardCCBill\bin\Debug\netcoreapp3.1\InputBills\ICICI-Input-Case2.csv
+C:\Users\DELL\source\repos\StandardCCBill\StandardCCBill\bin\Debug\netcoreapp3.1\InputBills\IDFC-Input-Case4.csv
