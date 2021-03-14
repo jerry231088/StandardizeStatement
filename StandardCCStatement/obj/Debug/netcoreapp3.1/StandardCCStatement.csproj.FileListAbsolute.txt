@@ -24,10 +24,3 @@ C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\bin\Debug\net
 C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\bin\Debug\netcoreapp3.1\StandardCCStatement.runtimeconfig.dev.json
 C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\bin\Debug\netcoreapp3.1\StandardCCStatement.dll
 C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\bin\Debug\netcoreapp3.1\StandardCCStatement.pdb
-C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\obj\Debug\netcoreapp3.1\StandardCCStatement.csprojAssemblyReference.cache
-C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\obj\Debug\netcoreapp3.1\StandardCCStatement.AssemblyInfoInputs.cache
-C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\obj\Debug\netcoreapp3.1\StandardCCStatement.AssemblyInfo.cs
-C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\obj\Debug\netcoreapp3.1\StandardCCStatement.csproj.CoreCompileInputs.cache
-C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\obj\Debug\netcoreapp3.1\StandardCCStatement.dll
-C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\obj\Debug\netcoreapp3.1\StandardCCStatement.pdb
-C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\obj\Debug\netcoreapp3.1\StandardCCStatement.genruntimeconfig.cache

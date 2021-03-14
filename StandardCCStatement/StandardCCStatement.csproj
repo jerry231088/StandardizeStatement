@@ -7,6 +7,12 @@
     <Nullable>disable</Nullable>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <OutputPath>bin\Debug\StandardizedStatement\</OutputPath>
+  </PropertyGroup>
+
   <ItemGroup>
     <Folder Include="InputBills\" />
   </ItemGroup>

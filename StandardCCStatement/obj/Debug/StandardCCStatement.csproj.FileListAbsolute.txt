@@ -1,0 +1,16 @@
+C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\bin\Debug\StandardizedStatement\StandardCCStatement.exe
+C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\bin\Debug\StandardizedStatement\InputBills\Axis-Input-Case3.csv
+C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\bin\Debug\StandardizedStatement\InputBills\HDFC-Input-Case1.csv
+C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\bin\Debug\StandardizedStatement\InputBills\ICICI-Input-Case2.csv
+C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\bin\Debug\StandardizedStatement\InputBills\IDFC-Input-Case4.csv
+C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\bin\Debug\StandardizedStatement\StandardCCStatement.deps.json
+C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\bin\Debug\StandardizedStatement\StandardCCStatement.runtimeconfig.json
+C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\bin\Debug\StandardizedStatement\StandardCCStatement.runtimeconfig.dev.json
+C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\bin\Debug\StandardizedStatement\StandardCCStatement.dll
+C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\bin\Debug\StandardizedStatement\StandardCCStatement.pdb
+C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\obj\Debug\StandardCCStatement.AssemblyInfoInputs.cache
+C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\obj\Debug\StandardCCStatement.AssemblyInfo.cs
+C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\obj\Debug\StandardCCStatement.csproj.CoreCompileInputs.cache
+C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\obj\Debug\StandardCCStatement.dll
+C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\obj\Debug\StandardCCStatement.pdb
+C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\obj\Debug\StandardCCStatement.genruntimeconfig.cache
