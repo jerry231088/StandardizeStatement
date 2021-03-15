@@ -16,15 +16,11 @@ namespace StandardCCStatement.Classes
         private static readonly object _lock = new object();
         private static ReadWriteCsv _readWriteCsvInstance = null;
         private readonly string _inputFilePath = string.Empty;
-        private readonly string _bankName = string.Empty;
         #endregion
 
         private ReadWriteCsv(string inputFilePath)
         {
             _inputFilePath = inputFilePath;
-            List<string> splitIpFilePath = inputFilePath.Split("\\").Select(s => s.Trim()).ToList();
-            List<string> fileNameSplit = splitIpFilePath[splitIpFilePath.Count - 1].Split('-').Select(s => s.Trim()).ToList();
-            _bankName = fileNameSplit[0].ToLower();
         }
 
         public static ReadWriteCsv GetInstance(string inputFilePath)
