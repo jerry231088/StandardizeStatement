@@ -74,7 +74,7 @@ namespace StandardCCStatement.Classes
         }
 
         /// <summary>
-        /// Method to get bank name from user
+        /// Method to get input from user
         /// </summary>
         private void UserInputBankName()
         {

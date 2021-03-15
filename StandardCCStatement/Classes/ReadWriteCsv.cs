@@ -83,6 +83,7 @@ namespace StandardCCStatement.Classes
         {
             int domesticOrInternational = -1; //-1: Nothing, 0: Domestic, 1: International
             string customerName = string.Empty;
+            List<string> inputStatementColName = new List<string>();
             try
             {
                 if (!string.IsNullOrEmpty(_inputFilePath))
@@ -90,7 +91,7 @@ namespace StandardCCStatement.Classes
                     string[] rows = File.ReadAllLines(_inputFilePath);
                     foreach (var row in rows)
                     {
-                        var columns = row.Split(',').Select(s => s.Trim()).ToList();
+                        List<string> columns = row.Split(',').Select(s => s.Trim()).ToList();
                         bool rowHasVal = Utility.HasValue(columns);
                         if (!rowHasVal)
                             continue;
@@ -102,73 +103,72 @@ namespace StandardCCStatement.Classes
                             {
                                 case 0:
                                     if (!_txnTypeWiseUserTxnDetails[Utility.ConvertToString(Utility.TxnTypeLoc.D)].ContainsKey(customerName))
-                                        _txnTypeWiseUserTxnDetails[Utility.ConvertToString(Utility.TxnTypeLoc.D)][customerName] = new List<CreditCardTxnDetails>();
+                                        _txnTypeWiseUserTxnDetails[Utility.ConvertToString(Utility.TxnTypeLoc.D)][customerName] = 
+                                            new List<CreditCardTxnDetails>();
                                     break;
                                 case 1:
                                     if (!_txnTypeWiseUserTxnDetails[Utility.ConvertToString(Utility.TxnTypeLoc.I)].ContainsKey(customerName))
-                                        _txnTypeWiseUserTxnDetails[Utility.ConvertToString(Utility.TxnTypeLoc.I)][customerName] = new List<CreditCardTxnDetails>();
+                                        _txnTypeWiseUserTxnDetails[Utility.ConvertToString(Utility.TxnTypeLoc.I)][customerName] = 
+                                            new List<CreditCardTxnDetails>();
                                     break;
                             }
                             continue;
                         }
 
-                        if (columns.Contains("Domestic Transactions") || columns.Contains("Domestic Transaction"))
+                        var colNameLowerCase = columns.Select(l => l.ToLower()).ToList();
+                        if (colNameLowerCase.Contains("domestic transactions") || colNameLowerCase.Contains("domestic transaction"))
                         {
                             domesticOrInternational = 0;
                             customerName = string.Empty;
                             if (!_txnTypeWiseUserTxnDetails.ContainsKey(Utility.ConvertToString(Utility.TxnTypeLoc.D)))
-                                _txnTypeWiseUserTxnDetails[Utility.ConvertToString(Utility.TxnTypeLoc.D)] = new Dictionary<string, List<CreditCardTxnDetails>>();
+                                _txnTypeWiseUserTxnDetails[Utility.ConvertToString(Utility.TxnTypeLoc.D)] = 
+                                    new Dictionary<string, List<CreditCardTxnDetails>>();
                             continue;
                         }
-                        else if (columns.Contains("International Transactions") || columns.Contains("International Transaction"))
+                        else if (colNameLowerCase.Contains("international transactions") || colNameLowerCase.Contains("international transaction"))
                         {
                             domesticOrInternational = 1;
                             customerName = string.Empty;
                             if (!_txnTypeWiseUserTxnDetails.ContainsKey(Utility.ConvertToString(Utility.TxnTypeLoc.I)))
-                                _txnTypeWiseUserTxnDetails[Utility.ConvertToString(Utility.TxnTypeLoc.I)] = new Dictionary<string, List<CreditCardTxnDetails>>();
+                                _txnTypeWiseUserTxnDetails[Utility.ConvertToString(Utility.TxnTypeLoc.I)] = 
+                                    new Dictionary<string, List<CreditCardTxnDetails>>();
                             continue;
                         }
-                        else if (columns.Contains("Date"))
+                        else if (colNameLowerCase.Contains("date"))
                         {
                             customerName = string.Empty;
+                            //List of column name to read the statement data accordingly
+                            inputStatementColName = new List<string>();
+                            inputStatementColName.AddRange(colNameLowerCase);                            
                             continue;
                         }
 
                         if (!string.IsNullOrEmpty(customerName))
                         {
-                            CreditCardTxnDetails ccTxnDetails = new CreditCardTxnDetails();
-                            //Need to merge these conditions to make it generic
-                            switch (_bankName)
+                            CreditCardTxnDetails ccTxnDetails = new CreditCardTxnDetails
                             {
-                                case "axis":
-                                    ccTxnDetails.TxnDate = columns[0];
-                                    ccTxnDetails.DebitAmt = columns[1];
-                                    ccTxnDetails.CreditAmt = columns[2];
-                                    ccTxnDetails.TxnDesc = Regex.Replace(columns[3], @"\s+", " ");
-                                    break;
-                                case "hdfc":
-                                    ccTxnDetails.TxnDate = columns[0];
-                                    if (!columns[2].ToLower().Contains("cr"))
-                                        ccTxnDetails.DebitAmt = columns[2];
-                                    else
-                                        ccTxnDetails.CreditAmt = columns[2].Substring(0, columns[2].Length - 2).Trim();
-                                    ccTxnDetails.TxnDesc = Regex.Replace(columns[1], @"\s+", " ");
-                                    break;
-                                case "icici":
-                                    ccTxnDetails.TxnDate = columns[0];
-                                    ccTxnDetails.DebitAmt = columns[2];
-                                    ccTxnDetails.CreditAmt = columns[3];
-                                    ccTxnDetails.TxnDesc = Regex.Replace(columns[1], @"\s+", " ");
-                                    break;
-                                case "idfc":
-                                    ccTxnDetails.TxnDate = columns[1];
-                                    if (!columns[2].ToLower().Contains("cr"))
-                                        ccTxnDetails.DebitAmt = columns[2];
-                                    else
-                                        ccTxnDetails.CreditAmt = columns[2].Substring(0, columns[2].Length - 2).Trim();
-                                    ccTxnDetails.TxnDesc = Regex.Replace(columns[0], @"\s+", " ");
-                                    break;
+                                TxnDate = columns[inputStatementColName.IndexOf("date")]
+                            };
+
+                            if (!inputStatementColName.Contains("amount"))
+                            {
+                                ccTxnDetails.DebitAmt = columns[inputStatementColName.IndexOf("debit")];
+                                ccTxnDetails.CreditAmt = columns[inputStatementColName.IndexOf("credit")];
                             }
+                            else
+                            {
+                                if (!columns[2].ToLower().Contains("cr"))
+                                    ccTxnDetails.DebitAmt = columns[inputStatementColName.IndexOf("amount")];
+                                else
+                                    ccTxnDetails.CreditAmt = columns[inputStatementColName.IndexOf("amount")].Substring(0,
+                                        columns[inputStatementColName.IndexOf("amount")].Length - 2).Trim();
+                            }
+
+                            if(inputStatementColName.Contains("transaction details"))
+                                ccTxnDetails.TxnDesc = Regex.Replace(columns[inputStatementColName.IndexOf("transaction details")], @"\s+", " ");
+                            else if(inputStatementColName.Contains("transaction description"))
+                                ccTxnDetails.TxnDesc = Regex.Replace(columns[inputStatementColName.IndexOf("transaction description")], @"\s+", " ");
+
                             switch (domesticOrInternational)
                             {
                                 case 0:
