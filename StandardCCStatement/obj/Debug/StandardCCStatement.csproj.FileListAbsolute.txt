@@ -14,3 +14,4 @@ C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\obj\Debug\Sta
 C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\obj\Debug\StandardCCStatement.dll
 C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\obj\Debug\StandardCCStatement.pdb
 C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\obj\Debug\StandardCCStatement.genruntimeconfig.cache
+C:\Users\DELL\source\repos\StandardCCStatement\StandardCCStatement\obj\Debug\StandardCCStatement.csprojAssemblyReference.cache

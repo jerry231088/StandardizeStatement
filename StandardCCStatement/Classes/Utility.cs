@@ -31,28 +31,22 @@ namespace StandardCCStatement.Classes
         }
 
         /// <summary>
-        /// Method to get input statement as per bank case number
+        /// Method to check input credit card statement exists or not as per bankname entered by user
         /// </summary>
         /// <param name="allInputCsvFiles">array of string contains csv files</param>
         /// <param name="bankName">bank name provided</param>
         /// <returns>Dictionary of key and values as string</returns>
-        public static Dictionary<string, string> GetInputStatmentAsPerBankCaseType(string[] allInputCsvFiles, string bankName)
+        public static Tuple<bool, string> CheckInputStatmentExists(string[] allInputCsvFiles, string bankName)
         {
-            Dictionary<string, string> bankInputStatementType = new Dictionary<string, string>();            
             foreach (string file in allInputCsvFiles)
             {
                 string[] filePathSplit = file.Split('\\');
                 if (filePathSplit.Length <= 0) continue;
                 string[] fileNameSplit = filePathSplit[^1].Split('-');
                 if (!fileNameSplit[0].ToLower().Equals(bankName)) continue;
-                
-                string billCaseType = fileNameSplit[^1][0..^4].ToLower();
-                //string billCaseType = fileNameSplit[^1].Substring(0, fileNameSplit[^1].Length - 4);
-                if (!bankInputStatementType.ContainsKey(bankName + "_" + billCaseType))
-                    bankInputStatementType[bankName + "_" + billCaseType] = filePathSplit[^1];
-                //bankInputStatementType[bankName + "_" + billCaseType] = filePathSplit[filePathSplit.Length - 1];
+                return Tuple.Create(true, file);
             }
-            return bankInputStatementType;
+            return Tuple.Create(false, "");
         }
 
         /// <summary>

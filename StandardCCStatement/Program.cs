@@ -22,7 +22,7 @@ namespace StandardCCStatement
         private static void GetStandardizeStatement()
         {            
             Console.WriteLine("Standardize Statement App Starts!");
-            Console.WriteLine("Please enter your bank name (Axis, HDFC, ICICI or IDFC) and press any key to continue.");
+            Console.WriteLine("Please enter your bank name like Axis, HDFC, ICICI, etc and press any key to continue.");
             string userInput = Console.ReadLine();
             IStatmentCCReader readInputBills = ReadInputCCBills.GetInstance();
             readInputBills.GetBankNameFromUser(userInput);            

@@ -137,6 +137,7 @@ namespace StandardCCStatement.Classes
                         if (!string.IsNullOrEmpty(customerName))
                         {
                             CreditCardTxnDetails ccTxnDetails = new CreditCardTxnDetails();
+                            //Need to merge these conditions to make it generic
                             switch (_bankName)
                             {
                                 case "axis":
