@@ -26,7 +26,6 @@ namespace StandardCCStatement
             string userInput = Console.ReadLine();
             IStatmentCCReader readInputBills = ReadInputCCBills.GetInstance();
             readInputBills.GetBankNameFromUser(userInput);            
-            Console.ReadLine();
         }        
     }
 }

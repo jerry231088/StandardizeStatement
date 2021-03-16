@@ -54,22 +54,29 @@ namespace StandardCCStatement.Classes
         /// <param name="outputData">output data as SortedDictionary<DateTime, List<StandardCCBillOutput>></param>
         public void WriteCSVFile(string outputPath, SortedDictionary<DateTime, List<StandardCCBillOutput>> outputData)
         {
-            if (File.Exists(outputPath)) File.Delete(outputPath);
-            using (StreamWriter file = new StreamWriter(outputPath))
+            try
             {
-                file.WriteLine("Date, Transaction Description, Debit, Credit, Currency, CardName, Transaction, Location");
-                foreach(var record in outputData)
+                if (File.Exists(outputPath)) File.Delete(outputPath);
+                using (StreamWriter file = new StreamWriter(outputPath))
                 {
-                    foreach(var data in record.Value)
+                    file.WriteLine("Date, Transaction Description, Debit, Credit, Currency, CardName, Transaction, Location");
+                    foreach (var record in outputData)
                     {
-                        string rowOutput = data.TxnDate + "," + data.TxnDesc + ","
-                        + data.Debit + "," + data.Credit + "," + data.Currency
-                        + "," + data.CardName + "," + data.TxnType + "," + data.TxnLocation;
-                        file.WriteLine(rowOutput);
+                        foreach (var data in record.Value)
+                        {
+                            string rowOutput = data.TxnDate + "," + data.TxnDesc + ","
+                            + data.Debit + "," + data.Credit + "," + data.Currency
+                            + "," + data.CardName + "," + data.TxnType + "," + data.TxnLocation;
+                            file.WriteLine(rowOutput);
+                        }
                     }
                 }
+                Console.WriteLine("Standardized credit card statement saved to " + outputPath);
             }
-            Console.WriteLine("Standardized credit card statement saved to " + outputPath);
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
         /// <summary>
